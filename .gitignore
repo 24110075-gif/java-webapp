@@ -1,0 +1,6 @@
+target/
+demo/target/
+.vscode/
+*.log
+*.war
+*.class
