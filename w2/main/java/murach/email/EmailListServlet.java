@@ -17,22 +17,27 @@ public class EmailListServlet extends HttpServlet {
 
         // get current action
         String action = request.getParameter("action");
-        if (action == null) {
+        String firstName = request.getParameter("firstName");
+
+        if (action == null && firstName == null) {
             action = "join";  // default action
         }
 
         // perform action and set URL to appropriate page
-        if (action.equals("join")) {
+        if ("join".equalsIgnoreCase(action) && firstName == null) {
             url = "/index.jsp";    // the "join" page
         }
-        else if (action.equals("add")) {
-            // get parameters from the request
-            String firstName = request.getParameter("firstName");
+        else {
+            // process survey / form submission
             String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");
+            String dob = request.getParameter("dob");
+            String hearAbout = request.getParameter("hearAbout");
+            String[] announcements = request.getParameterValues("announcements");
+            String contactBy = request.getParameter("contactBy");
 
             // store data in User object
-            User user = new User(firstName, lastName, email);
+            User user = new User(firstName, lastName, email, dob, hearAbout, announcements, contactBy);
 
             // set User object in request object and set URL
             request.setAttribute("user", user);
