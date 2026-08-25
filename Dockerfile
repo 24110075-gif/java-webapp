@@ -2,7 +2,7 @@
 FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
 COPY pom.xml .
-COPY src ./src
+COPY w2 ./w2
 RUN mvn clean package -DskipTests
 
 # Stage 2: Deploy WAR file to Tomcat 10 (Jakarta EE / Servlet API compatible)

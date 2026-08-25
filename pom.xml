@@ -38,7 +38,7 @@
 
     <build>
         <finalName>web-app</finalName>
-        <sourceDirectory>w2/main/java</sourceDirectory>
+        <sourceDirectory>w2/src/main/java</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -53,7 +53,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.4.0</version>
                 <configuration>
-                    <warSourceDirectory>w2/main/webapp</warSourceDirectory>
+                    <warSourceDirectory>w2/src/main/webapp</warSourceDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -61,7 +61,7 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>11.0.20</version>
                 <configuration>
-                    <webAppSourceDirectory>${project.basedir}/w2/main/webapp</webAppSourceDirectory>
+                    <webAppSourceDirectory>${project.basedir}/w2/src/main/webapp</webAppSourceDirectory>
                     <webApp>
                         <contextPath>/</contextPath>
                     </webApp>
