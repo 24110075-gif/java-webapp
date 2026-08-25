@@ -11,7 +11,7 @@
 <body>
     <main class="survey-container">
         <header>
-            <img src="image/images.png" alt="Murach Logo" class="logo">
+            <img src="image/image.gif" alt="Murach Logo" class="logo">
             <h1>Thanks for joining</h1>
             <p class="intro-text">Here is the information that you entered:</p>
         </header>
